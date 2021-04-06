@@ -3,16 +3,7 @@
 # элементов последний сохранить на своем месте. Для заполнения списка элементов
 # необходимо использовать функцию input().
 
-
-count = int(input('введите количество участников:'))
-i = count
-members = []
-while i > 0:
-    name = input('Кто занял {} место'.format(i))
-    members.append(name)
-    i-=1
-print('В соревнованиях участвовали: ', members)
-members.reverse()
-result = members[:3]
-result = 'Победители: {}. Поздравляем!'.format(result)
-print(result)
+my_list = list(input('Введите несколько произвольных целых чисел без пробелов и запятых: '))
+for n in range(1, len(my_list), 2):
+    my_list[n-1], my_list[n] = my_list[n], my_list[n-1]
+print(f'Обмен соседних элементов списка: {my_list}')

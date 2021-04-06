@@ -5,5 +5,5 @@
 words = input('Введите несколько слов, разделенных пробелами: ')
 word = words.split(' ')
 for i, word in enumerate(word):
-    print(i + 1, word[:10])
+    print(i + 1, ')', word[:10])
 

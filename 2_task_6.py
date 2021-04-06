@@ -17,3 +17,30 @@
 # “цена”: [20000, 6000, 2000],
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
+
+products = []
+#запрос у пользователя данных
+while True:
+    products.append((input('Введите номер товара: '),
+    dict({'Название': input('Введите название: '),
+    'Цена': input('Введите стоимость товара: '),
+    'Количество': input('Введите количество: '),
+    'Ед.': input('Введите единицы измерения: '),
+          })))
+    if input('Хотите добавить еще один товар? (да/нет): ') == 'нет':
+        break
+print('\n'.join(str(el) for el in products))
+
+#Аналитика
+analytics = dict({})
+for el in products:
+    for key, valeu in el[-1].items():
+        if key in analytics:
+            if valeu not in analytics.get(key):
+                analytics.get(key).append(valeu)
+        else:
+            analytics.update({key: [valeu]})
+for key, valeu in analytics.items():
+    print(f'{key}: {valeu}')
+
+
